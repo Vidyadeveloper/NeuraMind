@@ -1,0 +1,60 @@
+{
+  "layout": {
+    "type": "grid",
+    "columns": 3,
+    "gap": "16px",
+    "padding": "16px"
+  },
+  "widgets": [
+    {
+      "type": "metric",
+      "title": "Total Cases",
+      "dataSource": "totalCasesMetric",
+      "format": "number"
+    },
+    {
+      "type": "metric",
+      "title": "Avg. Resolution Time",
+      "dataSource": "avgResolutionTimeMetric",
+      "format": "number"
+    },
+    {
+      "type": "report",
+      "title": "Team Performance",
+      "dataSource": "teamPerformance"
+    },
+    {
+      "type": "chart",
+      "title": "Open Cases by Status",
+      "chartType": "bar",
+      "dataSource": "casesByStatusChart",
+      "options": {
+        "hAxis": { "title": "Number of Cases" },
+        "vAxis": { "title": "Status" }
+      }
+    },
+    {
+      "type": "chart",
+      "title": "Cases by Type",
+      "chartType": "bar",
+      "dataSource": "casesByTypeChart",
+      "options": {
+        "is3D": true
+      }
+    },
+    {
+      "type": "table",
+      "title": "Recent Cases",
+      "dataSource": "recentCasesTable",
+      "span": 3,
+      "columns": [
+        { "field": "id", "label": "Case ID" },
+        { "field": "type", "label": "Type" },
+        { "field": "status", "label": "Status" },
+        { "field": "created", "label": "Created", "format": "date" },
+        { "field": "assignedTo", "label": "Assigned To" }
+      ],
+      "maxRows": 10
+    }
+  ]
+}
